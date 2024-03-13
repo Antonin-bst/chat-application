@@ -11,7 +11,7 @@ Une application de chat avec des salons
 
 - Fonctionnalités de base du Chat
   - En tant qu'utilisateur, je souhaite créer un nouveau salon de discussion afin de communiquer avec d'autres utilisateurs.
-  - En tant qu'utilisateur, je souhaite rejoindre un groupe de discussion en utilisant un code d'invitation afin de participer aux conversations. 
+  - En tant qu'utilisateur, je souhaite rejoindre un salon en utilisant un code d'invitation afin de participer aux conversations. 
   - En tant qu'utilisateur, je souhaite voir la liste des membres d'un groupe de discussion et leurs statuts de connexion afin de voir la disponibilité de chacun.
   - En tant qu'utilisateur, je souhaite pouvoir envoyer des messages dans un salon afin de discuter avec les membres. 
 
