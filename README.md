@@ -6,8 +6,8 @@ Une application de chat avec des salons
 - Authentification et profil d'un utilisateur 
   - En tant qu'utilisateur, je souhaite m'inscrire à l'application en utilisant mon adresse e-mail et un mot de passe sécurisé afin de pouvoir accéder à ses fonctionnalités.
   - En tant qu'utilisateur, je souhaite me connecter à l'application en utilisant mon nom d'utilisateur et mon mot de passe afin d'accéder à mon compte.
-  - En tant qu'utilisateur, je veux pouvoir réinitialiser mon mot de passe avec mon adresse e-mai afin de pouvoir à nouveau accéder à l'application en cas d'oubli. 
-  - En tant qu'utilisateur, je veux pouvoir modifier mon profil en mettant à jour mes informations personnelles (nom, prénom, avatar, etc.) afin de le mettre à jour avec mes informations personnelles.
+  - En tant qu'utilisateur, je souhaite réinitialiser mon mot de passe avec mon adresse e-mai afin de pouvoir à nouveau accéder à l'application en cas d'oubli. 
+  - En tant qu'utilisateur, je souhaite modifier mon profil en mettant à jour mes informations personnelles (nom, prénom, avatar, etc.) afin de le mettre à jour avec mes informations personnelles.
 
 - Fonctionnalités de base du Chat
   - En tant qu'utilisateur, je souhaite créer un nouveau salon de discussion afin de communiquer avec d'autres utilisateurs.
