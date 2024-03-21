@@ -1,0 +1,18 @@
+# Dans mon système je dispose de 2 utilisateurs et de 3 salons. 
+- Les salons sont : 
+  FR, USA, ANG 
+
+  ## Les utilisateurs Quentin et Antonin
+  - Quentin appartient au salon FR 
+  - Antonin n'appartient à aucun salon 
+
+  Réaliser un TU : 
+  En tant donné que 
+    - je suis Quentin
+  Quand 
+    - je demande mes salons
+  Alors 
+    - je dispose du salon FR
+
+
+    
