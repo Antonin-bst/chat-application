@@ -1,0 +1,31 @@
+{
+    "Salons": [
+    "US",
+    "FR",
+    "UK"
+],
+    "Utilisateurs": [
+    {
+        "id": 1,
+        "nom": "Quentin"
+    },
+    {
+        "id": 2,
+        "nom": "Antonin"
+    }
+],
+    "SalonsUtilisateurs": [
+    {
+        "id": 1,
+        "salon": "FR"
+    },
+    {
+        "id": 1,
+        "salon": "US"
+    },
+    {
+        "id": 2,
+        "salon": "UK"
+    }
+]
+}
