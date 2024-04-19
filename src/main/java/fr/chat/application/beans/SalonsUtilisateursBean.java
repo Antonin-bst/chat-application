@@ -13,11 +13,6 @@ public class SalonsUtilisateursBean {
         this.salon = salon;
     }
 
-    @Override
-    public String toString() {
-        return "{id de l'utilisateur : " + id + ", salon : " + salon + "}";
-    }
-
     public int getId() {
         return id;
     }

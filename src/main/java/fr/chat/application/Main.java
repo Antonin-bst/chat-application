@@ -8,7 +8,7 @@ public class Main  {
 
     public static void main(String[] args) {
 
-        SalonService salonService = new SalonService(new SalonRepositoryJson("C:\\Users\\antonin.bastide\\Documents\\ProjetPerso\\chat-application\\src\\main\\java\\fr\\chat\\application\\BDD.json"));
+        SalonService salonService = new SalonService(new SalonRepositoryJson("C:\\chat-application\\src\\main\\java\\fr\\chat\\application\\BDD.json"));
 
         System.out.println("Tous les salons : " + salonService.getAllSalons());
         //System.out.println("Tous les users : " + salonService.getAllUtilisateurs());
