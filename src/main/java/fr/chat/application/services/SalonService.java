@@ -17,14 +17,7 @@ public class SalonService {
     }
 
 
-    public static List<String> getEntityNames(List<Salon> entities) {
-        List<String> names = new ArrayList<>();
-        for (Salon entity : entities) {
-            names.add(entity.getName());
-        }
-        return names;
-    }
-
+   
     public List<String> getAllSalons() {
         return getEntityNames(_repository.getAllSalons());
     }
@@ -32,15 +25,29 @@ public class SalonService {
     public ArrayList<Utilisateur> getAllUtilisateurs() {
         return _repository.getAllUtilisateurs();
     }
+    
+/* TODO: Adapter la méthode pour qu'elle fonctionne. Elle doit retourner les salon associé à l'utilisateur
+   public ArrayList<String> getUtilisateurSalons(int id) {
+        ArrayList<String> salonsDeUtilisateur = new ArrayList<>();
+        for (Salon salon : _repository.getUtilisateurSalons(id)) {
+            if (salon.getId() == id) {
+               salonsDeUtilisateur.add(us.getSalon());
+            }
+        }
+       return salonsDeUtilisateur;
+    }
+    */
 
-//    public ArrayList<String> getUtilisateurSalons(int id) {
-//        ArrayList<String> salonsDeUtilisateur = new ArrayList<>();
-//        for (Salon salon : _repository.getUtilisateurSalons(id)) {
-//            if (salon.getId() == id) {
-//                salonsDeUtilisateur.add(us.getSalon());
-//            }
-//        }
-//        return salonsDeUtilisateur;
-//    }
+private  List<String> getEntityNames(List<Salon> entities) {
+    List<String> names = new ArrayList<>();
+    for (Salon entity : entities) {
+        names.add(entity.getName());
+    }
+    return names;
+}
+
+
+
+
 
 }

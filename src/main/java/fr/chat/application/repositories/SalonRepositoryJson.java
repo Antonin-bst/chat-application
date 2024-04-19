@@ -33,8 +33,7 @@ public class SalonRepositoryJson implements InterfaceSalonRepository {
 
     @Override
     public ArrayList<Utilisateur> getAllUtilisateurs() {
-        //ArrayList<Utilisateur> utilisateurs = data.getUtilisateurs();
-        return null;  // data.getUtilisateurs();
+        return data.getUtilisateurs();
     }
 
     @Override
