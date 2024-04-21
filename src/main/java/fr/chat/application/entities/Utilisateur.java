@@ -17,7 +17,7 @@ public class Utilisateur {
 
     @Override
     public String toString() {
-        return "Utilisateur : " + nom + " " + id;
+        return "nom : " + nom + ", " + "id : " + id;
     }
 
     public String getNom() {
@@ -43,4 +43,5 @@ public class Utilisateur {
     public void setUtilisateurs(ArrayList<String> utilisateurs) {
         this.utilisateurs = utilisateurs;
     }
+
 }
