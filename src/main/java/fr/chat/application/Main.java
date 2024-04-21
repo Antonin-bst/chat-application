@@ -8,9 +8,12 @@ public class Main  {
 
     public static void main(String[] args) {
 
-        SalonService salonService = new SalonService(new SalonRepositoryJson("C:\\chat-application\\src\\main\\java\\fr\\chat\\application\\BDD.json"));
+        SalonService salonService = new SalonService(new SalonRepositoryJson("C:\\Users\\antonin.bastide\\Documents\\ProjetPerso\\chat-application\\src\\main\\java\\fr\\chat\\application\\BDD.json"));
         salonService.getAllSalons();
-       
+        System.out.println( salonService.getAllUtilisateurs());
+        System.out.println(salonService.getAllSalons());
+        System.out.println(salonService.getAllSalonsUtilisateurs());
+        System.out.println(salonService.getUtilisateurSalons(1));
 
       //  List<String> salons = salonService.getAllSalons();
        // ArrayList<String> salonsUtilisateur = salonService.getSalonDeUtilisateur("quentin");
