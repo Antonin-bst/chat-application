@@ -1,4 +1,5 @@
 package fr.chat.application.interfaces;
+import fr.chat.application.beans.SalonsUtilisateursBean;
 import fr.chat.application.entities.Salon;
 import fr.chat.application.entities.Utilisateur;
 
@@ -9,5 +10,5 @@ public interface InterfaceSalonRepository {
         List<Salon> getAllSalons();
         ArrayList<Utilisateur> getAllUtilisateurs();
         ArrayList<Salon> getUtilisateurSalons(int idUtilisateur);
-
+        ArrayList<SalonsUtilisateursBean> getAllSalonsUtilisateurs();
 }

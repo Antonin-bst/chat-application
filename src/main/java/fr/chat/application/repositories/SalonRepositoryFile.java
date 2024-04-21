@@ -1,5 +1,6 @@
 package fr.chat.application.repositories;
 
+import fr.chat.application.beans.SalonsUtilisateursBean;
 import fr.chat.application.entities.Salon;
 import fr.chat.application.entities.Utilisateur;
 import fr.chat.application.interfaces.InterfaceSalonRepository;
@@ -17,6 +18,7 @@ public class SalonRepositoryFile implements InterfaceSalonRepository {
     public ArrayList<Utilisateur> getAllUtilisateurs() { return null; }
     @Override
     public ArrayList<Salon> getUtilisateurSalons(int idUtilisateur) { return null; }
-
+    @Override
+    public ArrayList<SalonsUtilisateursBean> getAllSalonsUtilisateurs() { return null; }
 
 }
