@@ -13,6 +13,10 @@ public class SalonsUtilisateursBean {
         this.salon = salon;
     }
 
+    public String toString() {
+        return "SalonsUtilisateurs : " + "[" + id + "," + salon + "]";
+    }
+
     public int getId() {
         return id;
     }
