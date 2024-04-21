@@ -1,6 +1,7 @@
 package fr.chat.application.repositories;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import fr.chat.application.beans.SalonsUtilisateursBean;
 import fr.chat.application.entities.Salon;
 import fr.chat.application.entities.Utilisateur;
 import fr.chat.application.interfaces.InterfaceSalonRepository;
@@ -38,10 +39,12 @@ public class SalonRepositoryJson implements InterfaceSalonRepository {
 
     @Override
     public ArrayList<Salon> getUtilisateurSalons(int idUtilisateur) {
-
-
-
         return null;
+    }
+
+    @Override
+    public ArrayList<SalonsUtilisateursBean> getAllSalonsUtilisateurs() {
+        return data.getSalonsUtilisateurs();
     }
 
     private void ReadJson(){
