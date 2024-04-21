@@ -8,9 +8,7 @@ import fr.chat.application.entities.Utilisateur;
 public class DataBean {
     List<String> salons;
     ArrayList<Utilisateur> utilisateurs;
-
     ArrayList<SalonsUtilisateursBean> salonsUtilisateurs;
-
 
     public ArrayList<SalonsUtilisateursBean> getSalonsUtilisateurs() {
         return salonsUtilisateurs;
