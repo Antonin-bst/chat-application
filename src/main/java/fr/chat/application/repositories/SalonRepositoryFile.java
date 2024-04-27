@@ -6,7 +6,7 @@ import fr.chat.application.beans.DataBean;
 import fr.chat.application.beans.SalonsUtilisateursBean;
 import fr.chat.application.entities.Salon;
 import fr.chat.application.entities.Utilisateur;
-import fr.chat.application.interfaces.InterfaceSalonRepository;
+import fr.chat.application.interfaces.ISalonRepository;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SalonRepositoryFile implements InterfaceSalonRepository {
+public class SalonRepositoryFile implements ISalonRepository {
 
     String csvFilePath;
     DataBean data;

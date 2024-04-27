@@ -17,7 +17,7 @@ public class Main  {
 
     public static void main(String[] args) throws IOException {
 
-        SalonService salonService = new SalonService(new SalonRepositoryJson("C:\\Users\\antonin.bastide\\Documents\\ProjetPerso\\chat-application\\src\\main\\java\\fr\\chat\\application\\BDD.json"));
+        SalonService salonService = new SalonService(new SalonRepositoryJson(".\\src\\main\\java\\fr\\chat\\application\\BDD.json"));
         salonService.getAllSalons();
         System.out.println( salonService.getAllUtilisateurs());
         System.out.println(salonService.getAllSalons());

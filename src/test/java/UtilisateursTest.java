@@ -17,7 +17,7 @@ public class UtilisateursTest {
 
     @Test
     public void when_utilisateurDemandeSalon_then_getUtilisateurSalon_shouldReturn_salons() {
-        SalonService salonService = new SalonService(new SalonRepositoryJson("C:\\Users\\antonin.bastide\\Documents\\ProjetPerso\\chat-application\\src\\main\\java\\fr\\chat\\application\\BDD.json"));
+        SalonService salonService = new SalonService(new SalonRepositoryJson(".\\src\\main\\java\\fr\\chat\\application\\BDD.json"));
         ArrayList<Utilisateur> salonsUtilisateur = salonService.getAllUtilisateurs();
         // Vérifie que l'utilisateur a deux salons
         assertEquals(2, salonsUtilisateur.size());
