@@ -17,7 +17,7 @@ public class Utilisateur {
 
     @Override
     public String toString() {
-        return "nom : " + nom + ", " + "id : " + id;
+        return "[" + nom + ", " + id + "]";
     }
 
     public String getNom() {
