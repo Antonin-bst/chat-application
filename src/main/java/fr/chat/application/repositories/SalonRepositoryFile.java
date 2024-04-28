@@ -18,9 +18,9 @@ public class SalonRepositoryFile implements ISalonRepository {
     String salonsUtilisateursCheminCSV;
     DataBean data;
 
-    public SalonRepositoryFile(String utilisateursCheminCSV, String salonsUtilisateursCheminCSV) throws IOException {
-        this.utilisateursCheminCSV = utilisateursCheminCSV;
-        this.salonsUtilisateursCheminCSV = salonsUtilisateursCheminCSV;
+    public SalonRepositoryFile(String _utilisateursCheminCSV, String _salonsUtilisateursCheminCSV) {
+        utilisateursCheminCSV = _utilisateursCheminCSV;
+        salonsUtilisateursCheminCSV = _salonsUtilisateursCheminCSV;
         data = new DataBean();
         readUtilisateurFile();
         readSalonsUtilisateursFile();
@@ -40,7 +40,7 @@ public class SalonRepositoryFile implements ISalonRepository {
     @Override
     public Utilisateur getUtilisateurById(int idUtilisateur) { return null; }
 
-    private void readUtilisateurFile() throws IOException {
+    private void readUtilisateurFile() {
 
         BufferedReader reader = null;
         ArrayList<Utilisateur> utilisateurs = new ArrayList<>();
@@ -61,8 +61,13 @@ public class SalonRepositoryFile implements ISalonRepository {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            assert reader != null;
-            reader.close();
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
         //data = new DataBean();
@@ -70,7 +75,7 @@ public class SalonRepositoryFile implements ISalonRepository {
 
     }
 
-    private void readSalonsUtilisateursFile() throws IOException {
+    private void readSalonsUtilisateursFile() {
 
         BufferedReader reader = null;
         ArrayList<SalonsUtilisateursBean> salonsUtilisateurs = new ArrayList<>();
@@ -91,13 +96,13 @@ public class SalonRepositoryFile implements ISalonRepository {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            assert reader != null;
-            reader.close();
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
-
-        //data = new DataBean();
-        data.setSalonsUtilisateurs(salonsUtilisateurs);
-
     }
-
 }
