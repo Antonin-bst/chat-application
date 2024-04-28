@@ -16,29 +16,48 @@ public class SalonRepositoryFile implements ISalonRepository {
 
     String utilisateursCheminCSV;
     String salonsUtilisateursCheminCSV;
+    String salonsCheminCSV;
     DataBean data;
 
-    public SalonRepositoryFile(String _utilisateursCheminCSV, String _salonsUtilisateursCheminCSV) {
+    public SalonRepositoryFile(String _utilisateursCheminCSV, String _salonsUtilisateursCheminCSV, String _salonsCheminCSV) {
         utilisateursCheminCSV = _utilisateursCheminCSV;
         salonsUtilisateursCheminCSV = _salonsUtilisateursCheminCSV;
+        salonsCheminCSV = _salonsCheminCSV;
         data = new DataBean();
+        readSalonFile();
         readUtilisateurFile();
         readSalonsUtilisateursFile();
     }
 
     @Override
     public List<Salon> getAllSalons() {
-        return null;
+        List<String> salons = data.getSalons();
+        List<Salon> output = new ArrayList<>();
+        for (String item : salons){
+            output.add(new Salon(item));
+        }
+        return output;
     }
+
     @Override
     public ArrayList<Utilisateur> getAllUtilisateurs() { return data.getUtilisateurs(); }
     @Override
     public ArrayList<SalonsUtilisateursBean> getAllSalonsUtilisateurs() { return data.getSalonsUtilisateurs(); }
     @Override
     public ArrayList<Salon> getUtilisateurSalonsById(int idUtilisateur) { return null; }
-
     @Override
-    public Utilisateur getUtilisateurById(int idUtilisateur) { return null; }
+    public Utilisateur getUtilisateurById(int idUtilisateur) {
+
+        Utilisateur utilisateur = null;
+        for (Utilisateur u : getAllUtilisateurs()){
+            if (u.getId() == idUtilisateur) {
+                utilisateur = u;
+                break;
+            }
+        }
+
+        return utilisateur;
+    }
 
     private void readUtilisateurFile() {
 
@@ -106,5 +125,31 @@ public class SalonRepositoryFile implements ISalonRepository {
         }
 
         data.setSalonsUtilisateurs(salonsUtilisateurs);
+    }
+
+    private void readSalonFile() {
+        BufferedReader reader = null;
+        ArrayList<String> salons = new ArrayList<>();
+        try {
+            reader = new BufferedReader(new FileReader(salonsCheminCSV));
+            String line;
+            // Ignorer la première ligne
+            reader.readLine();
+            while ((line = reader.readLine()) != null) {
+                salons.add(String.valueOf(new Salon(line.trim())));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        data.setSalons(salons);
     }
 }
