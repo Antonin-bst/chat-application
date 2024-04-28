@@ -38,7 +38,7 @@ public class SalonRepositoryJson implements ISalonRepository {
     }
 
     @Override
-    public ArrayList<Salon> getUtilisateurSalons(int idUtilisateur) {
+    public ArrayList<Salon> getUtilisateurSalonsById(int idUtilisateur) {
         return null;
     }
 
@@ -46,6 +46,21 @@ public class SalonRepositoryJson implements ISalonRepository {
     public ArrayList<SalonsUtilisateursBean> getAllSalonsUtilisateurs() {
         return data.getSalonsUtilisateurs();
     }
+
+    @Override
+    public Utilisateur getUtilisateurById(int idUtilisateur) {
+
+        Utilisateur utilisateur = null;
+        for (Utilisateur u : getAllUtilisateurs()){
+            if (u.getId() == idUtilisateur) {
+                utilisateur = u;
+                break;
+            }
+        }
+
+        return utilisateur;
+    }
+
 
     private void ReadJson(){
         try (FileReader reader = new FileReader(jsonFilePath)) {
