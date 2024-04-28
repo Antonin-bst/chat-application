@@ -1,6 +1,7 @@
 package fr.chat.application;
 
 
+import fr.chat.application.entities.Salon;
 import fr.chat.application.entities.Utilisateur;
 import fr.chat.application.repositories.SalonRepositoryFile;
 import fr.chat.application.repositories.SalonRepositoryJson;
@@ -12,34 +13,27 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Main  {
 
     public static void main(String[] args) throws IOException {
 
         SalonService salonService = new SalonService(new SalonRepositoryJson(".\\src\\main\\java\\fr\\chat\\application\\BDD.json"));
-        salonService.getAllSalons();
-        System.out.println( salonService.getAllUtilisateurs());
-        System.out.println(salonService.getAllSalons());
-        System.out.println(salonService.getAllSalonsUtilisateurs());
-        System.out.println(salonService.getUtilisateurSalons(1));
+        SalonService salonServiceFile = new SalonService(new SalonRepositoryFile(".\\src\\main\\java\\fr\\chat\\application\\utilisateurs.csv"));
+        //System.out.println(salonService.getUtilisateurSalonsById(2));
+        System.out.println(salonServiceFile.getAllUtilisateurs());
 
-      //  List<String> salons = salonService.getAllSalons();
-       // ArrayList<String> salonsUtilisateur = salonService.getSalonDeUtilisateur("quentin");
-
-      /* Afficher les salons de l'utilisateur
-        System.out.println("Salons de l'utilisateur " + "quentin" + ":");
-        for (String salon : salonsUtilisateur) {
-            System.out.println(salon);
+        List<List<String>> records = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader("\".\\\\src\\\\main\\\\java\\\\fr\\\\chat\\\\application\\\\utilisateurs.csv\""))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                records.add(Arrays.asList(values));
+            }
         }
-        */
-
-        String utilisateursCSV = "C:\\Users\\antonin.bastide\\Documents\\ProjetPerso\\chat-application\\src\\main\\java\\fr\\chat\\application\\utilisateurs.csv";
-        var repo = new SalonRepositoryFile(utilisateursCSV);
-            var utilisateurs = repo.getAllUtilisateurs();
-           System.out.println(utilisateurs);
-
-
+        System.out.println(records);
     }
 
 
