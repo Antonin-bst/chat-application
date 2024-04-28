@@ -9,6 +9,7 @@ import java.util.List;
 public interface ISalonRepository {
         List<Salon> getAllSalons();
         ArrayList<Utilisateur> getAllUtilisateurs();
-        ArrayList<Salon> getUtilisateurSalons(int idUtilisateur);
+        ArrayList<Salon> getUtilisateurSalonsById(int idUtilisateur);
         ArrayList<SalonsUtilisateursBean> getAllSalonsUtilisateurs();
+        Utilisateur getUtilisateurById(int idUtilisateur);
 }
