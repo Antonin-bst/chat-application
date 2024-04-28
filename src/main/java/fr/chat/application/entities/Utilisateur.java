@@ -8,6 +8,7 @@ public class Utilisateur {
     private String nom;
     private int id;
     private ArrayList<String> utilisateurs;
+    private ArrayList<String> salons;
 
     public Utilisateur(String nom, int id) {
         super();
@@ -17,7 +18,7 @@ public class Utilisateur {
 
     @Override
     public String toString() {
-        return "[" + nom + ", " + id + "]";
+        return "[" + nom + ", " + id +  " " + salons + "]";
     }
 
     public String getNom() {
@@ -44,4 +45,11 @@ public class Utilisateur {
         this.utilisateurs = utilisateurs;
     }
 
+    public ArrayList<String> getSalons() {
+        return salons;
+    }
+
+    public void setSalons(ArrayList<String> salons) {
+        this.salons = salons;
+    }
 }
