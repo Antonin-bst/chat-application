@@ -104,5 +104,7 @@ public class SalonRepositoryFile implements ISalonRepository {
                 }
             }
         }
+
+        data.setSalonsUtilisateurs(salonsUtilisateurs);
     }
 }
