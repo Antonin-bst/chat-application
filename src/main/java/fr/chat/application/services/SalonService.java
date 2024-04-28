@@ -1,7 +1,6 @@
 package fr.chat.application.services;
 
 import fr.chat.application.beans.SalonsUtilisateursBean;
-import fr.chat.application.beans.UtilisateurAvecSalons;
 import fr.chat.application.entities.Salon;
 import fr.chat.application.entities.Utilisateur;
 import fr.chat.application.interfaces.ISalonRepository;
@@ -29,27 +28,18 @@ public class SalonService {
         return _salonRepository.getAllSalonsUtilisateurs();
     }
 
-    //TODO: Adapter la méthode pour qu'elle fonctionne. Elle doit retourner les salon associé à l'utilisateur
-    public UtilisateurAvecSalons getUtilisateurSalons(int idUtilisateur) {
+    public Utilisateur getUtilisateurById(int idUtilisateur) {
+        return _salonRepository.getUtilisateurById(idUtilisateur);
+    }
 
+    public Utilisateur getUtilisateurSalonsById(int idUtilisateur) {
 
-        //déplacer dans le répository en ajoutant une méthode 
-        //      _utilisateurRepository.getbyId()
-
-        // Méthode pour get by id un utilisateur
-        Utilisateur utilisateur = null;
-        for (Utilisateur u : _salonRepository.getAllUtilisateurs()) {
-            if (u.getId() == idUtilisateur) {
-                utilisateur = u;
-                break;
-            }
-        }
+        Utilisateur utilisateur = _salonRepository.getUtilisateurById(idUtilisateur);
 
         if (utilisateur == null) {
             return null;
         }
 
-        // Récupérer les salons associés à cet utilisateur
         ArrayList<String> salonsDeUtilisateur = new ArrayList<>();
         for (SalonsUtilisateursBean salonUtilisateur : _salonRepository.getAllSalonsUtilisateurs()) {
             if (salonUtilisateur.getId() == idUtilisateur) {
@@ -57,10 +47,9 @@ public class SalonService {
             }
         }
 
-        UtilisateurAvecSalons utilisateurAvecSalons;
-        utilisateurAvecSalons = new UtilisateurAvecSalons(utilisateur, salonsDeUtilisateur);
+        utilisateur.setSalons(salonsDeUtilisateur);
 
-        return utilisateurAvecSalons;
+        return utilisateur;
     }
 
 
