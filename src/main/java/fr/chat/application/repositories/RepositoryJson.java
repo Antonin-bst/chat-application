@@ -4,7 +4,7 @@ import com.google.gson.GsonBuilder;
 import fr.chat.application.beans.SalonsUtilisateursBean;
 import fr.chat.application.entities.Salon;
 import fr.chat.application.entities.Utilisateur;
-import fr.chat.application.interfaces.ISalonRepository;
+import fr.chat.application.interfaces.IRepository;
 import fr.chat.application.beans.DataBean;
 
 import java.io.FileReader;
@@ -12,12 +12,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SalonRepositoryJson implements ISalonRepository {
+public class RepositoryJson implements IRepository {
 
     String jsonFilePath;
     DataBean data;
 
-    public SalonRepositoryJson(String _jsonFilePath) {
+    public RepositoryJson(String _jsonFilePath) {
         jsonFilePath = _jsonFilePath;
         ReadJson();
     }

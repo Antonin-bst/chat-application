@@ -6,7 +6,7 @@ import fr.chat.application.entities.Utilisateur;
 import java.util.ArrayList;
 import java.util.List;
 
-public interface ISalonRepository {
+public interface IRepository {
         List<Salon> getAllSalons();
         ArrayList<Utilisateur> getAllUtilisateurs();
         ArrayList<Salon> getUtilisateurSalonsById(int idUtilisateur);

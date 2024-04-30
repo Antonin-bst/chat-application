@@ -1,8 +1,7 @@
 
-import fr.chat.application.beans.SalonsUtilisateursBean;
 import fr.chat.application.entities.Utilisateur;
-import fr.chat.application.repositories.SalonRepositoryFile;
-import fr.chat.application.services.SalonService;
+import fr.chat.application.repositories.RepositoryFile;
+import fr.chat.application.services.Service;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -15,7 +14,7 @@ public class SalonsTestFileCSV {
     String utilisateursCheminCSV = ".\\src\\main\\java\\fr\\chat\\application\\utilisateurs.csv";
     String salonsUtilisateursCheminCSV = ".\\src\\main\\java\\fr\\chat\\application\\salonsUtilisateurs.csv";
     String salonsCheminCSV = ".\\src\\main\\java\\fr\\chat\\application\\salons.csv";
-    SalonService salonServiceFile = new SalonService(new SalonRepositoryFile(utilisateursCheminCSV, salonsUtilisateursCheminCSV, salonsCheminCSV));
+    Service service = new Service(new RepositoryFile(utilisateursCheminCSV, salonsUtilisateursCheminCSV, salonsCheminCSV));
 
     /*
      * @Exemple de notation
@@ -26,8 +25,8 @@ public class SalonsTestFileCSV {
     @Test
     public void when_utilisateurDemandeLesSalons_then_getAllSalonsUtilisateurs_shouldReturn_salons() {
 
-        ArrayList<Utilisateur> utilisateurs = salonServiceFile.getAllUtilisateurs();
-        System.out.println(salonServiceFile.getAllSalonsUtilisateurs());
+        ArrayList<Utilisateur> utilisateurs = service.getAllUtilisateurs();
+        System.out.println(service.getAllSalonsUtilisateurs());
 
         assertNotNull(utilisateurs);
         assertEquals(3, utilisateurs.size());
@@ -36,7 +35,7 @@ public class SalonsTestFileCSV {
     @Test
     public void when_utilisateurDemandeSalon_then_getAllSalons_shouldReturn_leNomDesSalons() {
 
-        List<String> nomsDesSalons = salonServiceFile.getAllSalons();
+        List<String> nomsDesSalons = service.getAllSalons();
         System.out.println(nomsDesSalons);
 
         assertNotNull(nomsDesSalons);

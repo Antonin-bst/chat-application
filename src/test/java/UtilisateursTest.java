@@ -1,6 +1,6 @@
 import fr.chat.application.entities.Utilisateur;
-import fr.chat.application.repositories.SalonRepositoryJson;
-import fr.chat.application.services.SalonService;
+import fr.chat.application.repositories.RepositoryJson;
+import fr.chat.application.services.Service;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ public class UtilisateursTest {
 
     @Test
     public void when_utilisateurDemandeSalon_then_getUtilisateurSalon_shouldReturn_salons() {
-        SalonService salonService = new SalonService(new SalonRepositoryJson(".\\src\\main\\java\\fr\\chat\\application\\BDD.json"));
+        Service salonService = new Service(new RepositoryJson(".\\src\\main\\java\\fr\\chat\\application\\BDD.json"));
         ArrayList<Utilisateur> salonsUtilisateur = salonService.getAllUtilisateurs();
         // Vérifie que l'utilisateur a deux salons
         assertEquals(2, salonsUtilisateur.size());

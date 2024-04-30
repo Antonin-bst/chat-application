@@ -4,7 +4,7 @@ import fr.chat.application.beans.DataBean;
 import fr.chat.application.beans.SalonsUtilisateursBean;
 import fr.chat.application.entities.Salon;
 import fr.chat.application.entities.Utilisateur;
-import fr.chat.application.interfaces.ISalonRepository;
+import fr.chat.application.interfaces.IRepository;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -12,14 +12,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SalonRepositoryFile implements ISalonRepository {
+public class RepositoryFile implements IRepository {
 
     String utilisateursCheminCSV;
     String salonsUtilisateursCheminCSV;
     String salonsCheminCSV;
     DataBean data;
 
-    public SalonRepositoryFile(String _utilisateursCheminCSV, String _salonsUtilisateursCheminCSV, String _salonsCheminCSV) {
+    public RepositoryFile(String _utilisateursCheminCSV, String _salonsUtilisateursCheminCSV, String _salonsCheminCSV) {
         utilisateursCheminCSV = _utilisateursCheminCSV;
         salonsUtilisateursCheminCSV = _salonsUtilisateursCheminCSV;
         salonsCheminCSV = _salonsCheminCSV;

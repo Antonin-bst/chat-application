@@ -3,16 +3,16 @@ package fr.chat.application.services;
 import fr.chat.application.beans.SalonsUtilisateursBean;
 import fr.chat.application.entities.Salon;
 import fr.chat.application.entities.Utilisateur;
-import fr.chat.application.interfaces.ISalonRepository;
+import fr.chat.application.interfaces.IRepository;
 
 import java.util.*;
 
 //logique, filtrer salon en fonction utilisateur etc.
-public class SalonService {
+public class Service {
 
-    private final ISalonRepository _salonRepository;
+    private final IRepository _salonRepository;
 
-    public SalonService(ISalonRepository salonRepository) {
+    public Service(IRepository salonRepository) {
         _salonRepository = salonRepository;
     }
 
